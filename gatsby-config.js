@@ -8,7 +8,14 @@ module.exports = {
     // You can overwrite values here that are used for the SEO component
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/master/themes/gatsby-theme-minimal-blog/gatsby-config.js
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    siteTitle: `superclass.io`,
+    siteTitleAlt: `superclass.io`,
+    siteHeadline: `superclass.io`,
+    siteUrl: `https://blog.superclass.io`,
+    siteDescription: `테크, 이상한 취미, 온갖 삽질의 흔적들`,
+    siteLanguage: `ko`,
+    // siteImage: `/banner.jpg`,
+    author: `@crmin`,
   },
   plugins: [
     {
@@ -27,12 +34,8 @@ module.exports = {
         ],
         externalLinks: [
           {
-            name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
-          },
-          {
-            name: `Homepage`,
-            url: `https://www.lekoarts.de?utm_source=minimal-blog&utm_medium=Starter`,
+            name: `Github`,
+            url: `https://github.com/crmin`,
           },
         ],
       },
