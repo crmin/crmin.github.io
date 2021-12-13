@@ -3,8 +3,100 @@ title: About
 slug: "/about"
 ---
 
-Hi!
+<Text sx={{ fontSize: [4, 5, 6], fontWeight: 'bold', color: 'heading' }}>
+Hello.<br/>
+I'm Min Choro
+</Text>
 
-Remus Lupin - also known as Moony - is currently teaching "Defense against the Dark Arts" at Hogwarts. He was afflicted with lycanthropy during his childhood, as a result of Fenrir Greyback's revenge against Lyall. He attended Hogwarts School of Witchcraft and Wizardry from 1971-1978 and was Sorted into Gryffindor House. During his school years he was one of the Marauders, best friends with Sirius Black, James Potter, and Peter Pettigrew. Together they created the Marauder's Map.
+테크를 좋아합니다.<br/>
+Maximalist 입니다. <br/>
+남들이 하는건 당연히 해야하고 안하는 것도 해야합니다.<br/>
+남들이 가지고 있는건 당연히 가져야고 안가지고 있는는 것도 가져야합니다.
 
-He fought against Death Eaters once more in the Second Wizarding War, during which he lost his friend Sirius. In 1997, Remus married fellow Order member Nymphadora Tonks and had a son, Edward Remus Lupin, of whom he named Harry the godfather. Remus fought at the Battle of Hogwarts on 2 May, 1998, during which his wife was murdered by Bellatrix Lestrange. Remus was also murdered by Death Eater, Antonin Dolohov, during the first half of the same battle. His death was avenged by Filius Flitwick.
+일을 잘 할 수 있도록 도와주는 개발 문화에 관심이 많습니다.<br/>
+단순히 "일"로써의 개발이 아닌 유저의 경험을 생각하는 개발에 관심이 많습니다.<br/>
+기존의 불편한 과정을 자동화하고 생산성을 높히는 개발을 좋아합니다.<br/>
+
+<Text sx={{ fontSize: [4, 5, 6], fontWeight: 'bold', color: 'heading' }}>Personal Project</Text>
+
+### 학술정보관 열람실 현황 서비스 개선
+
+<img
+    src="https://i.imgur.com/trcAj6f.png"
+    alt="학술정보관 좌석 예약 현황"
+    style="width: 60%"
+/>
+
+총학생회 사석화 방지 캠페인에 이용을 위해 개발한 서비스입니다.<br/>
+해당 프로젝트는 학술 정보관(교내 도서관)의 남은 좌석을 확인할 수 있는 서비스를 제공합니다.<br/>
+기존에 [학술정보관에서 제공되던 페이지](http://libseat.unist.ac.kr/EZ5500/SEAT/RoomStatus.aspx)는
+일정 시간마다 새로고침이 되면서 데이터를 업데이트하도록 설계되었습니다.<br/>
+모바일 친화적이지 않은 서비스와 함께 강제 새로고침까지 되면서 확대해서 보던 페이지가 새로고침 될 때 마다 확대가 풀리는 현상이 발생했습니다.<br/>
+이 프로젝트에서는 위 페이지에서 정보를 스크래핑, 가공 한 데이터를 일정 시간마다 ajax로 요청하여 새로고침 되는 현상이 없도록 수정했고,
+총학생회 캠페인에서 유용하게 사용되었습니다.
+
+프로젝트에는 jQuery, Django를 이용했습니다.
+
+[Github Repository](https://github.com/blinglnav/usc-library-check)
+
+### 총학생회 프린터 당직 자동화
+
+<img
+    src="https://i.imgur.com/AkxMBT0.png"
+    alt="카드 리더기 사용법"
+    style="width: 60%"
+/>
+
+총학생회 프린터 사업을 위해 제작한 windows native 앱입니다.<br/>
+총학생회 당직 사업 중 학생회비 납부자에 한하여 인쇄 서비스를 제공하는 사업이 있었습니다.<br/>
+이전에는 당직이 직접 학생증을 확인하고 웹사이트를 통해 학번을 조회, 납부 여부를 확인하도록 했었습니다.<br/>
+운영 비용을 낮추기 위해 학생증의 RFID를 읽어 학번을 추출, 납부 여부를 확인, 프린터 연결 PC의 잠금이 풀리도록 자동화하여 당직의 업무 부담을 줄였습니다.<br/>
+이 프로젝트는 총학생회 당직 학생 뿐만 아니라 당직 서비스를 이용하는 일반 학우들에게도 큰 호응을 받았습니다.
+
+저는 이 프로젝트에서 RFID를 읽어 API를 요청하고 납부 여부에 따라 PC의 잠금을 풀어주는 소프트웨어를 개발했습니다.
+
+프로젝트에는 C#을 이용했습니다.
+
+[Github Repository](https://github.com/blinglnav/usc-printer-dog)
+
+### 스쿼트로 점프킹하기
+
+<img
+    src="https://user-images.githubusercontent.com/8157830/134462706-d6047007-bcb4-49d1-9faa-982ef41e463b.png"
+    alt="스쿼트로 플레이하는 점프킹"
+    style="width: 60%"
+/>
+
+"키보드로만 하는 게임을 더 인터렉티브하게 할 수 없을까?"라는 궁금증에서 부터 시작된 프로젝트입니다.<br/>
+키보드 방향키로 좌우를 움직이고 스페이스바로 점프를 해서 탑을 오르는 게임인 "Jump King"을
+스쿼트와 버튼 2개로 플레이 할 수 있도록 만들었습니다.<br/>
+개발기는 [여기](/2020/03/28/스쿼트로-점프킹-하기-2/)에서 확인하실 수 있습니다.
+
+
+
+<Text sx={{ fontSize: [4, 5, 6], fontWeight: 'bold', color: 'heading' }}>Opensource Contributions</Text>
+
+### django-slack-oauth
+
+* [Project Github Repository](https://github.com/izdi/django-slack-oauth)
+* [Forked Github Repository](https://github.com/crmin/django-slack-oauth)
+
+Django 1.x 버전을 기준으로 작성되어있던 프로젝트를 당시에 새로 출시된 Django 2.0에서도 호환이 되도록 수정했습니다.
+
+
+<Text sx={{ fontSize: [4, 5, 6], fontWeight: 'bold', color: 'heading' }}>Work Experiences</Text><br/>
+
+<Text sx={{ fontSize: [3, 4, 5], fontWeight: 'bold', color: 'heading' }}>Buzzni</Text> 2018.08. ~ 2020.11.
+
+Data Engineer
+
+* 쇼핑사(홈쇼핑, 티커머스, 오픈마켓 등)별 매출 데이터의 수집 자동화
+    * 신규 입점 쇼핑사의 매출 데이터 ETL 작업 작성
+    * 기존 매출 수집 시스템의 리팩토링
+* 모아리포트 서비스 제작
+    * 매월의 홈쇼핑 트렌드를 알 수 있는 트렌드 리포트 서비스 제작 (backend & frontend)
+
+
+<Text sx={{ fontSize: [3, 4, 5], fontWeight: 'bold', color: 'heading' }}>Purimedi</Text> 2021.08. ~ (now)
+
+Software Engineer
