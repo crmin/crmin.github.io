@@ -1,0 +1,102 @@
+---
+title: "Homebrew Computer - Part 1"
+date: 2023-03-28
+slug: "/2023/02/21/homebrew-computer-1/"
+canonicalUrl: "https://blog.superclass.io/homebrew-computer"
+tags:
+  - "Homebrew Computer"
+  - "Project"
+---
+
+<div style="text-align: center">
+    <img alt="Homebrew Computer"
+         src="https://user-images.githubusercontent.com/8157830/220326907-3224d1b5-9b02-4cb1-a502-96db06d2ca28.png"/>
+</div>
+
+<div style="border: solid 1px #75b5aa; border-radius: 0.3em;">
+    <div style="background-color: #75b5aa; color: white; padding: 0.5em 1em; border-radius-top: 0.3em;">
+    Homebrew Computer 시리즈
+    </div>
+    <div style="padding: 0.8em 1em">
+    <ul>
+        <li>
+            <b>Homebrew Computer Pt.1</b>
+        </li>
+    </ul>
+    </div>
+</div>
+
+# Homebrew Computer Club
+
+> The Homebrew Computer Club was an early computer hobbyist group in Menlo Park, California, which met from March 1975 to December 1986. The club had an influential role in the development of the microcomputer revolution and the rise of that aspect of the Silicon Valley information technology industrial complex.
+> *Homebrew Computer Club | Wikipedia*
+
+오늘 우리는 컴퓨터를 만든다고 하면 CPU와 SSD 같은 부품을 사서 조립하는 것을 생각하겠지만 30년 전에는 어쩌면 컴퓨터를 직접 만드는 것을 생각했을지도 모르겠다.
+
+학교마다 다르겠지만 우리 학교는 당시 커리큘럼 상으로 학부 3학년 1학기에 "컴퓨터 구조" 수업을 들었다.
+해당 수업에서는 CPU가 어떻게 동작하는지를 배웠는데, 처음에는 MIPS 구조와 MIPS 해석기를 고수준의 언어로 작성했고,
+이후에는 Verilog를 이용해서 MIPS 해석기를 구현하게 된다.
+
+이 수업을 듣고나서부터 컴퓨터를 logic level에서 부터 만들어보고 싶었는데, 이대로 계속 미루다가는 영원히 만들어 볼 기회가 생기지 않을 것 같아서 시작해보려고 한다.
+
+이 프로젝트는 IC칩 없이 디스크리트(Discrete) 소자 (트랜지스터, 다이오드 등의 단일 기능을 하는 소자)를 이용해서 컴퓨터를 만드는 것을 목적으로 한다.
+
+# 트랜지스터를 이용한 Logic Gates
+
+트랜지스터를 이용하면 논리 회로를 구성할 수 있다.
+NAND를 만들 수 있으니 이론적으로 모든 Logic gate를 구현할 수 있다. [참고](https://thrillfighter.tistory.com/265)
+물론 NAND 뿐만 아니라 다른 logic gate도 구현할 수 있고, NAND만으로 구성하는 것 보다 트랜지스터도 적게 들기 때문에 여러 gate들을 구현해서 구성할 생각이다.
+
+트랜지스터 logic gate는 기본적으로 트랜지스터의 스위칭 작용을 이용해서 구현한다. [트랜지스터 회로 링크 참고](http://hyperphysics.phy-astr.gsu.edu/hbase/Electronic/trangate.html)
+AND, OR, NAND, NOR은 각각 2개, NOT은 1개의 트랜지스터가 필요하고, XOR은 다른 gate들을 조합해서 구현하게 된다.
+
+<div style="text-align: center">
+    <img alt="XOR gate 등가회로"
+         src="https://user-images.githubusercontent.com/8157830/220355119-3d0f4600-6e09-4592-9d81-d0c993ec243f.png"/>
+    <div>
+        <em>(source: <a href="https://commons.wikimedia.org/wiki/File:254px_3gate_XOR.jpg" target="_blank">Wikimedia</a>)</em>
+    </div>
+</div>
+
+
+XOR은 NAND, OR, AND gate로 트랜지스터 6개를 이용해 아래와 같이 구현할 수 있다.
+
+<div style="text-align: center">
+    <img alt="트랜지스터를 이용한 XOR"
+         src="https://user-images.githubusercontent.com/8157830/220356192-b532d715-69cf-4a6b-bbd2-04cf900b2408.png"
+         style="max-width:500px"/>
+</div>
+
+# Half Adder
+이제 막 트랜지스터로 논리 게이트를 구현하는 방법을 다뤘는데 바로 CPU를 만드는 것도 이상하고, 학부 3학년에 다뤘던 내용이라 기억도 가물가물한 상태이다.
+본격적으로 CPU를 만들어보기에 앞서 반가산기 (Half Adder)를 만들어보려고 한다.
+
+반가산기는 두 개의 1비트 정보를 더할 수 있는 회로이다.
+
+1비트끼리 더하면 어떻게 될까? 진리표(Truth table)을 통해서 알아보자.
+
+S = A + B일 때
+
+| A | B | S |
+|---|---|---|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | `?` |
+
+1비트 끼리의 덧셈에서는 1 + 1은 다음 자리로 올림(Carry)을 발생한다.
+따라서 Truth table에 Carry bit `C`를 추가하면 다음과 같다.
+
+| A | B | C | S |
+|---|---|---|---|
+| 0 | 0 | 0 | 0 |
+| 0 | 1 | 0 | 1 |
+| 1 | 0 | 0 | 1 |
+| 1 | 1 | 1 | 0 |
+
+S bit는 A와 B가 다를 때 1이고 (XOR), C bit는 A와 B 모두 1일 때만 1(AND)인 것을 알 수 있다.
+따라서 진리표대로 logic gate를 구성하면 아래와 같이 만들 수 있다.
+
+![반가산기 logic gate](https://user-images.githubusercontent.com/8157830/220363107-e2ea22d3-297c-48c4-b3b3-7309bc950a20.png)
+
+다음 글은 실제 트랜지스터로 반가산기를 구현한다.
