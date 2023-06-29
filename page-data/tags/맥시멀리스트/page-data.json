@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---node-modules-lekoarts-gatsby-theme-minimal-blog-core-src-templates-tag-query-tsx",
+    "path": "/tags/맥시멀리스트",
+    "result": {"data":{"allPost":{"nodes":[{"slug":"/uses/","title":"내가 쓰는 것들","date":"20.01.2023","excerpt":"choyongjoon님의 쓰는 것들 ,  BenCodeZen님의 Uses 에서 영감을 얻어서 내가 사용하는 것들을 정리해봤다. 마지막 수정: 2023년 1월 20일 Hardware 컴퓨터 및 주변기기 MacBook Pro 13in 2019 512GB…","timeToRead":4,"description":null,"tags":[{"name":"맥시멀리스트","slug":"맥시멀리스트"}]}]}},"pageContext":{"slug":"맥시멀리스트","name":"맥시멀리스트","formatString":"DD.MM.YYYY"}},
+    "staticQueryHashes": ["2744905544","3090400250","318001574"]}

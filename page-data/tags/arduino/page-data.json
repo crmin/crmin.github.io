@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---node-modules-lekoarts-gatsby-theme-minimal-blog-core-src-templates-tag-query-tsx",
+    "path": "/tags/arduino",
+    "result": {"data":{"allPost":{"nodes":[{"slug":"/2020/04/18/스쿼트로-점프킹-하기-2/","title":"스쿼트로 점프킹 하기 - Part 2","date":"18.04.2020","excerpt":"…","timeToRead":4,"description":null,"tags":[{"name":"HCI","slug":"hci"},{"name":"Arduino","slug":"arduino"},{"name":"Game","slug":"game"}]},{"slug":"/2020/03/28/스쿼트로-점프킹-하기-1/","title":"스쿼트로 점프킹 하기 - Part 1","date":"28.03.2020","excerpt":"…","timeToRead":2,"description":null,"tags":[{"name":"HCI","slug":"hci"},{"name":"Arduino","slug":"arduino"},{"name":"Game","slug":"game"}]}]}},"pageContext":{"slug":"arduino","name":"Arduino","formatString":"DD.MM.YYYY"}},
+    "staticQueryHashes": ["2744905544","3090400250","318001574"]}
